@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Response
 import requests
 
 app = Flask(__name__)
@@ -21,7 +21,8 @@ def get_rootme_stats():
             else:
                 datas[key] = "-"
 
-    return render_template("rootmestats.html", data=datas)
+    svg_content = render_template("rootmestats.html", data=datas)
+    return Response(svg_content, mimetype="image/svg+xml")
 
 if __name__ == "__main__":
     app.run(debug=True)
