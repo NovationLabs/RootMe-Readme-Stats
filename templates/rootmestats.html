@@ -1,0 +1,55 @@
+<svg width="300" height="165" viewBox="0 0 300 165" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="descId">
+    <title id="titleId">Root-Me Stats</title>
+    <desc id="descId">Root-Me Card Stats</desc>
+
+    <style>
+        .header {
+            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: #f39c12;
+        }
+        .stat {
+            font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: #38bdae;
+        }
+        .background {
+            fill: #1E1E1E;
+            stroke: #f39c12;
+            stroke-width: 1;
+            rx: 8;
+        }
+        .percentage-circle {
+            fill: none;
+            stroke: #f39c12;
+            stroke-width: 4;
+        }
+        .percentage-text {
+            font: 700 16px 'Segoe UI', Ubuntu, Sans-Serif;
+            fill: #ffffff;
+        }
+    </style>
+
+    <rect x="0.5" y="0.5" width="299" height="164" class="background"/>
+
+    <g transform="translate(20, 30)">
+        <text x="0" y="0" class="header">Root-Me Stats</text>
+    </g>
+
+    <g transform="translate(20, 60)">
+        <text x="0" y="0" class="stat">Username: {{ data.userName }}</text>
+    </g>
+
+    <g transform="translate(20, 85)">
+        <text x="0" y="0" class="stat">Rank: {{ data.userRank }}</text>
+    </g>
+
+    <g transform="translate(20, 110)">
+        <text x="0" y="0" class="stat">Score: {{ data.userScore }}</text>
+    </g>
+
+    <g transform="translate(20, 135)">
+        <text x="0" y="0" class="stat">Challs: {{ data.userChallenge }} / {{ data.totalChallenge }}</text>
+    </g>
+
+    <circle cx="240" cy="80" r="30" class="percentage-circle" />
+    <text x="228" y="85" class="percentage-text">{{ data.userPercent }}</text>
+</svg>
